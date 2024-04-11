@@ -23,3 +23,11 @@ C:\kacper_api_podejsce2\APBD_REST\APBD_REST\obj\Debug\net8.0\refint\APBD_REST.dl
 C:\kacper_api_podejsce2\APBD_REST\APBD_REST\obj\Debug\net8.0\APBD_REST.pdb
 C:\kacper_api_podejsce2\APBD_REST\APBD_REST\obj\Debug\net8.0\APBD_REST.genruntimeconfig.cache
 C:\kacper_api_podejsce2\APBD_REST\APBD_REST\obj\Debug\net8.0\ref\APBD_REST.dll
+C:\kacper_api_podejsce2\APBD_REST\APBD_REST\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\kacper_api_podejsce2\APBD_REST\APBD_REST\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\kacper_api_podejsce2\APBD_REST\APBD_REST\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\kacper_api_podejsce2\APBD_REST\APBD_REST\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\kacper_api_podejsce2\APBD_REST\APBD_REST\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\kacper_api_podejsce2\APBD_REST\APBD_REST\obj\Debug\net8.0\APBD_REST.csproj.AssemblyReference.cache
+C:\kacper_api_podejsce2\APBD_REST\APBD_REST\obj\Debug\net8.0\APBD_REST.sourcelink.json
+C:\kacper_api_podejsce2\APBD_REST\APBD_REST\obj\Debug\net8.0\APBD_REST.csproj.Up2Date
