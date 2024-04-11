@@ -1,8 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class Animals
 {
+    [Key]
     public int Id { get; set; }
-    public string Name { get; set; }
-    public string Category { get; set; }
+    [Required]
+    public string? Name { get; set; }
+    [Required]
+    public string? Category { get; set; }
+    [Required]
     public float Mass { get; set; }
-    public string FurColor { get; set; }
+    [Required]
+    public string? FurColor { get; set; }
 }
