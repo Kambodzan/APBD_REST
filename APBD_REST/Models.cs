@@ -13,6 +13,7 @@ public class Animals
     public float Mass { get; set; }
     [Required]
     public string? FurColor { get; set; }
+
 }
 
 public class Visits
@@ -20,11 +21,13 @@ public class Visits
     [Required]
     public int Id { get; set; }
     [Required]
-    public Animals? Animal { get; set; }
-    [Required]
     public DateTime VisitDate { get; set; }
     [Required]
     public string? Description { get; set; }
     [Required]
     public float Price { get; set; }
+
+    [ForeignKey("Animals")]
+    public int AnimalID { get; set; }
+
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace APBD_REST.Migrations
 {
     [DbContext(typeof(AnimalsDb))]
-    partial class AnimalsDbModelSnapshot : ModelSnapshot
+    [Migration("20240412172702_Model-Correction")]
+    partial class ModelCorrection
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +75,25 @@ namespace APBD_REST.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AnimalID");
+
                     b.ToTable("Visits");
+                });
+
+            modelBuilder.Entity("Visits", b =>
+                {
+                    b.HasOne("Animals", "Animals")
+                        .WithMany("Visits")
+                        .HasForeignKey("AnimalID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Animals");
+                });
+
+            modelBuilder.Entity("Animals", b =>
+                {
+                    b.Navigation("Visits");
                 });
 #pragma warning restore 612, 618
         }

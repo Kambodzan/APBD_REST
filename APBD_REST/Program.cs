@@ -12,10 +12,35 @@ app.MapGet("/", () => "Cześć Świat!");
 app.MapGet("/animals", async (AnimalsDb db) => 
     await db.Animals.ToListAsync());
 
-// Get animal based on id
+// Get animal by id
 app.MapGet("/animals/{id}", async (int id, AnimalsDb db) =>
     await db.Animals.FindAsync(id)
         is Animals animal ? Results.Ok(animal) : Results.NotFound());
+
+// Get animal visit by id
+app.MapGet("/visit/{id}", async (int id, AnimalsDb db) => 
+{
+    var data = await db.Visits.Where(e => e.AnimalID == id).ToListAsync();
+
+    if (data is null) return Results.NotFound();
+
+    return Results.Ok(data);
+
+});
+
+// Add visit
+app.MapPost("/visit", async (Visits visit, AnimalsDb db) =>
+{
+    
+    var animal = await db.Animals.FindAsync(visit.AnimalID);
+    if (animal is null) return Results.NotFound("No animal found");
+
+    db.Visits.Add(visit);
+    await db.SaveChangesAsync();
+
+    return Results.Created($"/visit/{visit.Id}",visit);
+    
+});    
 
 // Add animal
 app.MapPost("/animals", async (Animals animal, AnimalsDb db) =>
